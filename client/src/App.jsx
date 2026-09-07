@@ -30,6 +30,7 @@ import CathLab from './pages/CathLab';
 import Facilities from './pages/Facilities';
 import FacilityDetail from './pages/FacilityDetail';
 import Academics from './pages/Academics';
+import BlogDetail from './pages/BlogDetail';
 
 // Scroll to top or anchor on route change
 const ScrollToTop = () => {
@@ -102,7 +103,16 @@ const App = () => {
           <Route path="/health-packages" element={<HealthPackages />} />
           <Route path="/health-checkup" element={<HealthPackages />} />
           <Route path="/health-checkups" element={<HealthPackages />} />
+          
+          {/* BLOG & HEALTH KNOWLEDGE HUB Routes */}
           <Route path="/blog" element={<Blog />} />
+          <Route path="/blogs" element={<Blog />} />
+          <Route path="/articles" element={<Blog />} />
+          <Route path="/health-knowledge" element={<Blog />} />
+          <Route path="/blog/:slug" element={<BlogDetail />} />
+          <Route path="/blogs/:slug" element={<BlogDetail />} />
+          <Route path="/article/:slug" element={<BlogDetail />} />
+          <Route path="/articles/:slug" element={<BlogDetail />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/appointment" element={<Appointment />} />
           {/* FACILITIES & DIAGNOSTIC SERVICES Routes matching real website */}
@@ -147,7 +157,6 @@ const App = () => {
 
           {/* Additional auxiliary routes */}
           <Route path="/second-opinion" element={<Appointment />} />
-          <Route path="/blog/:slug" element={<ComingSoon title="Blog Post" />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </Layout>

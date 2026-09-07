@@ -1,4 +1,5 @@
 import Banner from '../components/Banner';
+import HeroActionCards from '../components/HeroActionCards';
 import StatsSection from '../components/StatsSection';
 import AboutSection from '../components/AboutSection';
 import QuickTiles from '../components/QuickTiles';
@@ -10,6 +11,7 @@ const Home = () => {
   return (
     <main>
       <Banner />
+      <HeroActionCards />
       <StatsSection />
       <AboutSection />
       <QuickTiles />
