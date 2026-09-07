@@ -44,22 +44,22 @@ const QuickTiles = () => {
   const [ref, inView] = useInView({ triggerOnce: true, threshold: 0.1 });
 
   return (
-    <section ref={ref} className="py-20 bg-slate-50 relative">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section ref={ref} className="py-20 2xl:py-28 bg-slate-50 relative">
+      <div className="container-custom">
         
-        <div className="text-center max-w-3xl mx-auto mb-16">
-          <span className="inline-block bg-blue-100/70 text-[#2f5aae] text-xs font-extrabold px-3.5 py-1.5 rounded-full uppercase tracking-wider mb-3">
+        <div className="text-center max-w-3xl 2xl:max-w-4xl mx-auto mb-16">
+          <span className="inline-block bg-sky-50 border border-sky-200/60 text-[#0095da] text-xs font-extrabold px-3.5 py-1.5 rounded-full uppercase tracking-wider mb-3">
             Explore Billroth
           </span>
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-slate-900 tracking-tight mb-4">
-            Beyond <span className="text-[#2f5aae]">Treatment</span>
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl 2xl:text-6xl font-extrabold text-slate-900 tracking-tight mb-4">
+            Beyond <span className="text-[#0095da]">Treatment</span>
           </h2>
-          <p className="text-slate-600 text-base sm:text-lg">
+          <p className="text-slate-600 text-base sm:text-lg 2xl:text-xl">
             Empowering communities through medical education, preventive diagnostics, and ongoing clinical research.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 2xl:gap-10">
           {tiles.map((tile, i) => (
             <motion.div
               key={tile.title}
@@ -70,7 +70,7 @@ const QuickTiles = () => {
             >
               <Link
                 to={tile.link}
-                className="group relative flex flex-col justify-end h-[420px] rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 p-8 border border-slate-200/50"
+                className="group relative flex flex-col justify-end h-[420px] 2xl:h-[480px] rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 p-8 2xl:p-10 border border-slate-200/50"
               >
                 {/* Background Image */}
                 <img
@@ -80,7 +80,7 @@ const QuickTiles = () => {
                 />
 
                 {/* Dark Gradient Overlay */}
-                <div className="absolute inset-0 bg-gradient-to-t from-[#071739] via-[#071739]/70 to-transparent group-hover:via-[#071739]/80 transition-colors" />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#002d52] via-[#002d52]/70 to-transparent group-hover:via-[#002d52]/80 transition-colors" />
 
                 {/* Top Tag */}
                 <div className="absolute top-6 left-6">
@@ -91,15 +91,15 @@ const QuickTiles = () => {
 
                 {/* Card Content */}
                 <div className="relative z-10 text-white space-y-2.5">
-                  <div className="w-12 h-12 rounded-2xl bg-[#a6ce39] text-slate-950 flex items-center justify-center mb-4 shadow-md group-hover:scale-110 transition-transform">
+                  <div className="w-12 h-12 rounded-2xl bg-[#8cc63f] text-slate-950 flex items-center justify-center mb-4 shadow-md group-hover:scale-110 transition-transform">
                     <tile.icon size={22} />
                   </div>
 
-                  <div className="text-xs font-semibold text-[#a6ce39] uppercase tracking-wider">
+                  <div className="text-xs font-semibold text-[#8cc63f] uppercase tracking-wider">
                     {tile.subtitle}
                   </div>
 
-                  <h3 className="text-2xl font-extrabold text-white group-hover:text-blue-200 transition-colors">
+                  <h3 className="text-2xl font-extrabold text-white group-hover:text-sky-200 transition-colors">
                     {tile.title}
                   </h3>
 
@@ -107,7 +107,7 @@ const QuickTiles = () => {
                     {tile.description}
                   </p>
 
-                  <div className="pt-3 flex items-center gap-2 text-sm font-bold text-[#a6ce39] group-hover:text-white transition-colors">
+                  <div className="pt-3 flex items-center gap-2 text-sm font-bold text-[#8cc63f] group-hover:text-white transition-colors">
                     <span>Learn More</span>
                     <ArrowRight size={15} className="group-hover:translate-x-1.5 transition-transform" />
                   </div>

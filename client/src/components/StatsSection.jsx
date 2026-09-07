@@ -61,25 +61,25 @@ const StatsSection = () => {
   return (
     <section
       ref={ref}
-      className="py-20 text-white relative overflow-hidden"
+      className="py-20 2xl:py-28 text-white relative overflow-hidden"
       style={{
-        background: 'linear-gradient(135deg, #072a3e 0%, #0d4b68 45%, #14615a 100%)',
+        background: 'linear-gradient(135deg, #004b77 0%, #0077b6 35%, #0095da 65%, #3cb878 85%, #8cc63f 100%)',
       }}
     >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div className="text-center max-w-3xl mx-auto mb-14">
+      <div className="container-custom relative z-10">
+        <div className="text-center max-w-3xl 2xl:max-w-4xl mx-auto mb-14">
           <span className="inline-block bg-white/15 text-[#8cc63f] text-xs font-black px-4 py-1.5 rounded-full uppercase tracking-wider mb-3 border border-white/20">
             Our Healthcare Journey
           </span>
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black tracking-tight mb-4">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl 2xl:text-6xl font-black tracking-tight mb-4">
             Ready to Care <span className="text-[#8cc63f]">In Every Possible Way</span>
           </h2>
-          <p className="text-teal-100 text-base sm:text-lg leading-relaxed">
+          <p className="text-white/90 text-base sm:text-lg 2xl:text-xl leading-relaxed">
             Delivering medical precision, advanced clinical technology, and dedicated care to every family.
           </p>
         </div>
 
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 2xl:gap-8">
           {stats.map((stat, i) => (
             <StatCard key={stat.label} stat={stat} index={i} inView={inView} />
           ))}

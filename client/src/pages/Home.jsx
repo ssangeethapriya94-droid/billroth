@@ -1,5 +1,4 @@
 import Banner from '../components/Banner';
-import Specialties from '../components/Specialties';
 import StatsSection from '../components/StatsSection';
 import AboutSection from '../components/AboutSection';
 import QuickTiles from '../components/QuickTiles';
@@ -11,7 +10,6 @@ const Home = () => {
   return (
     <main>
       <Banner />
-      <Specialties />
       <StatsSection />
       <AboutSection />
       <QuickTiles />

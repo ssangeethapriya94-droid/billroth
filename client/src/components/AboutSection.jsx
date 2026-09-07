@@ -14,9 +14,9 @@ const AboutSection = () => {
   const [ref, inView] = useInView({ triggerOnce: true, threshold: 0.15 });
 
   return (
-    <section ref={ref} className="py-20 lg:py-28 bg-white relative overflow-hidden">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+    <section ref={ref} className="py-20 lg:py-28 2xl:py-36 bg-white relative overflow-hidden">
+      <div className="container-custom">
+        <div className="grid lg:grid-cols-12 gap-12 lg:gap-16 2xl:gap-20 items-center">
           
           {/* Left Column: Visual Presentation (5 cols) */}
           <motion.div
@@ -29,7 +29,7 @@ const AboutSection = () => {
               <img
                 src="https://billrothhospitals.com/wp-content/uploads/2024/02/hospital-care.png"
                 alt="Billroth Hospitals Patient Care"
-                className="w-full h-[460px] object-cover"
+                className="w-full h-[460px] 2xl:h-[540px] object-cover"
                 onError={(e) => {
                   e.target.src = "https://images.unsplash.com/photo-1584515979956-d9f6e5d09982?auto=format&fit=crop&w=800&q=80";
                 }}
@@ -38,11 +38,11 @@ const AboutSection = () => {
 
               {/* Bottom Card Inside Image */}
               <div className="absolute bottom-6 left-6 right-6 p-4 rounded-2xl bg-white/95 backdrop-blur-md shadow-lg border border-slate-100 flex items-center gap-4">
-                <div className="w-12 h-12 rounded-xl bg-[#0084c7] text-white flex items-center justify-center font-bold text-xl flex-shrink-0">
+                <div className="w-12 h-12 rounded-xl bg-[#0095da] text-white flex items-center justify-center font-bold text-xl flex-shrink-0">
                   <Award size={24} />
                 </div>
                 <div>
-                  <div className="text-xs font-bold text-[#0084c7] uppercase tracking-wider">Pioneers in Healthcare</div>
+                  <div className="text-xs font-bold text-[#0095da] uppercase tracking-wider">Pioneers in Healthcare</div>
                   <div className="text-sm font-extrabold text-slate-900">Dr. V. Jeganathan's Legacy</div>
                 </div>
               </div>
@@ -50,8 +50,8 @@ const AboutSection = () => {
 
             {/* Floating Top Badge */}
             <div className="absolute -top-4 -right-4 sm:-right-6 bg-gradient-to-br from-[#8cc63f] to-lime-600 text-white rounded-2xl p-4 shadow-xl text-center">
-              <div className="text-2xl font-black">33+</div>
-              <div className="text-[11px] font-bold uppercase tracking-wider leading-tight">Years Of<br />Care</div>
+              <div className="text-2xl 2xl:text-3xl font-black">33+</div>
+              <div className="text-[11px] 2xl:text-xs font-bold uppercase tracking-wider leading-tight">Years Of<br />Care</div>
             </div>
           </motion.div>
 
@@ -60,18 +60,18 @@ const AboutSection = () => {
             initial={{ opacity: 0, x: 30 }}
             animate={inView ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 0.6, delay: 0.15 }}
-            className="lg:col-span-7 space-y-6"
+            className="lg:col-span-7 space-y-6 2xl:space-y-8"
           >
-            <div className="inline-flex items-center gap-2 bg-teal-50 text-[#15729d] border border-teal-200/60 text-xs font-black px-4 py-1.5 rounded-full uppercase tracking-wider">
+            <div className="inline-flex items-center gap-2 bg-sky-50 text-[#0095da] border border-sky-200/60 text-xs font-black px-4 py-1.5 rounded-full uppercase tracking-wider">
               <ShieldCheck size={14} className="text-[#8cc63f]" />
               <span>About Billroth Hospitals</span>
             </div>
 
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-slate-900 tracking-tight leading-tight">
-              Behind Our Mask Are <span className="text-[#0084c7]">Faces You Trust</span>
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl 2xl:text-6xl font-black text-slate-900 tracking-tight leading-tight">
+              Behind Our Mask Are <span className="text-[#0095da]">Faces You Trust</span>
             </h2>
 
-            <p className="text-slate-600 text-base sm:text-lg leading-relaxed">
+            <p className="text-slate-600 text-base sm:text-lg 2xl:text-xl leading-relaxed">
               Founded in 1990 by the visionary late Dr. V. Jeganathan, Billroth Hospitals has evolved into one of Chennai's foremost tertiary care medical destinations, known for clinical precision, patient empathy, and affordability.
             </p>
 
@@ -94,7 +94,7 @@ const AboutSection = () => {
                 to="/departments"
                 className="inline-flex items-center gap-2 text-white px-7 py-3.5 rounded-full font-black text-xs uppercase tracking-wider shadow-md hover:shadow-lg transition-all"
                 style={{
-                  background: 'linear-gradient(90deg, #15729d 0%, #208287 50%, #30946d 100%)',
+                  background: 'linear-gradient(90deg, #0095da 0%, #10a877 50%, #8cc63f 100%)',
                 }}
               >
                 <span>Explore Specialties</span>
@@ -103,7 +103,7 @@ const AboutSection = () => {
 
               <Link
                 to="/contact"
-                className="inline-flex items-center gap-2 border-2 border-slate-200 hover:border-[#0084c7] text-slate-700 hover:text-[#0084c7] px-6 py-3 rounded-full font-bold text-sm transition-all"
+                className="inline-flex items-center gap-2 border-2 border-slate-200 hover:border-[#0095da] text-slate-700 hover:text-[#0095da] px-6 py-3 rounded-full font-bold text-sm transition-all"
               >
                 <span>Contact Hospital</span>
               </Link>

@@ -9,21 +9,21 @@ const contactCards = [
     label: 'Hospital Address',
     value: '43, Lakshmi Talkies Road, Shenoy Nagar, Chennai – 600 030',
     href: 'https://maps.google.com/?q=Billroth+Hospitals+Chennai',
-    iconBg: 'bg-cyan-50 border border-cyan-200 text-[#0084c7]',
+    iconBg: 'bg-sky-50 border border-sky-200 text-[#0095da]',
   },
   {
     Icon: Phone,
     label: 'Direct Phone',
     value: hospitalInfo.phone1,
     href: `tel:${hospitalInfo.phone1}`,
-    iconBg: 'bg-teal-50 border border-teal-200 text-[#15729d]',
+    iconBg: 'bg-sky-50 border border-sky-200 text-[#0095da]',
   },
   {
     Icon: Mail,
     label: 'Email Enquiries',
     value: hospitalInfo.email,
     href: `mailto:${hospitalInfo.email}`,
-    iconBg: 'bg-emerald-50 border border-emerald-200 text-[#30946d]',
+    iconBg: 'bg-lime-50 border border-lime-200 text-[#8cc63f]',
   },
   {
     Icon: Clock,
@@ -50,7 +50,7 @@ const Contact = () => {
       <div
         className="relative py-20 px-4 text-center overflow-hidden text-white"
         style={{
-          background: 'linear-gradient(135deg, #093c57 0%, #136085 35%, #1c7a87 70%, #288c69 100%)',
+          background: 'linear-gradient(135deg, #004b77 0%, #0077b6 35%, #0095da 65%, #3cb878 85%, #8cc63f 100%)',
         }}
       >
         <div
@@ -63,42 +63,42 @@ const Contact = () => {
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          className="relative max-w-3xl mx-auto space-y-4"
+          className="relative max-w-3xl 2xl:max-w-4xl mx-auto space-y-4"
         >
           <span className="inline-block bg-white/15 text-[#8cc63f] text-xs font-black px-4 py-1.5 rounded-full uppercase tracking-wider border border-white/20">
             24/7 Healthcare Support
           </span>
-          <h1 className="text-4xl sm:text-5xl font-black text-white">
+          <h1 className="text-4xl sm:text-5xl 2xl:text-6xl font-black text-white">
             Contact <span className="text-[#8cc63f]">Billroth Hospitals</span>
           </h1>
-          <p className="text-teal-100 text-base sm:text-lg">
+          <p className="text-white/90 text-base sm:text-lg 2xl:text-xl">
             We are here to assist you with outpatient appointments, emergency support, and hospital enquiries.
           </p>
         </motion.div>
       </div>
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+      <div className="container-custom py-16 2xl:py-24">
         
         {/* Contact Info Cards */}
-        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-4 2xl:grid-cols-4 gap-6 2xl:gap-8 mb-16">
           {contactCards.map(({ Icon, label, value, href, iconBg }, i) => (
             <motion.div
               key={label}
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: i * 0.1 }}
-              className="bg-white rounded-3xl p-6 shadow-sm border border-slate-200 hover:shadow-md transition-shadow text-center"
+              className="bg-white rounded-3xl p-6 2xl:p-8 shadow-sm border border-slate-200 hover:shadow-md transition-shadow text-center"
             >
               <div className={`w-14 h-14 ${iconBg} rounded-2xl flex items-center justify-center mx-auto mb-4`}>
                 <Icon size={24} />
               </div>
-              <h3 className="text-[11px] font-black text-slate-400 uppercase tracking-wider mb-2">{label}</h3>
+              <h3 className="text-[11px] 2xl:text-xs font-black text-slate-400 uppercase tracking-wider mb-2">{label}</h3>
               {href ? (
                 <a
                   href={href}
                   target={href.startsWith('http') ? '_blank' : undefined}
                   rel="noreferrer"
-                  className="text-slate-800 font-bold text-sm hover:text-[#0084c7] transition-colors leading-relaxed whitespace-pre-line block"
+                  className="text-slate-800 font-bold text-sm hover:text-[#0095da] transition-colors leading-relaxed whitespace-pre-line block"
                 >
                   {value}
                 </a>
@@ -110,7 +110,7 @@ const Contact = () => {
         </div>
 
         {/* Form and Map Grid */}
-        <div className="grid lg:grid-cols-2 gap-10">
+        <div className="grid lg:grid-cols-2 gap-10 2xl:gap-14">
           {/* Left: Map & Direct Assist */}
           <motion.div
             initial={{ opacity: 0, x: -20 }}
@@ -120,7 +120,7 @@ const Contact = () => {
           >
             {/* Map Area */}
             <div className="bg-white rounded-3xl overflow-hidden shadow-sm border border-slate-200 p-8 text-center flex flex-col items-center justify-center">
-              <div className="w-16 h-16 bg-cyan-50 text-[#0084c7] border border-cyan-100 rounded-2xl flex items-center justify-center mb-4">
+              <div className="w-16 h-16 bg-sky-50 text-[#0095da] border border-sky-100 rounded-2xl flex items-center justify-center mb-4">
                 <MapPin size={28} />
               </div>
               <h3 className="font-extrabold text-slate-900 text-lg mb-1">Billroth Hospitals</h3>
@@ -133,7 +133,7 @@ const Contact = () => {
                 rel="noreferrer"
                 className="inline-flex items-center gap-2 px-6 py-3 rounded-full text-white text-xs font-bold uppercase tracking-wider shadow-md hover:shadow-lg transition-all"
                 style={{
-                  background: 'linear-gradient(90deg, #15729d 0%, #208287 50%, #30946d 100%)',
+                  background: 'linear-gradient(90deg, #0095da 0%, #10a877 50%, #8cc63f 100%)',
                 }}
               >
                 <MapPin size={14} />
@@ -145,7 +145,7 @@ const Contact = () => {
             <div
               className="rounded-3xl p-8 text-white space-y-4"
               style={{
-                background: 'linear-gradient(135deg, #093c57 0%, #15729d 50%, #2f8e6b 100%)',
+                background: 'linear-gradient(135deg, #004b77 0%, #0077b6 40%, #0095da 70%, #8cc63f 100%)',
               }}
             >
               <div className="flex items-center gap-3">
@@ -154,7 +154,7 @@ const Contact = () => {
                 </div>
                 <h3 className="font-extrabold text-white text-lg">Need Immediate Assistance?</h3>
               </div>
-              <p className="text-teal-100 text-sm leading-relaxed">
+              <p className="text-sky-100 text-sm leading-relaxed">
                 Our patient care desk is available 24/7 to coordinate emergency admissions, ambulance services, and specialist appointments.
               </p>
               <div className="grid sm:grid-cols-2 gap-3 pt-2">
@@ -193,7 +193,7 @@ const Contact = () => {
                   onClick={() => setSubmitted(false)}
                   className="text-white px-8 py-3.5 rounded-full text-xs font-bold uppercase tracking-wider"
                   style={{
-                    background: 'linear-gradient(90deg, #15729d 0%, #208287 50%, #30946d 100%)',
+                    background: 'linear-gradient(90deg, #0095da 0%, #10a877 50%, #8cc63f 100%)',
                   }}
                 >
                   Send Another Message
@@ -219,7 +219,7 @@ const Contact = () => {
                       value={form.name}
                       onChange={handleChange}
                       placeholder="Full Name"
-                      className="w-full px-4 py-3.5 rounded-xl border-2 border-slate-200 focus:border-[#0084c7] outline-none text-sm font-semibold bg-slate-50 focus:bg-white transition-all"
+                      className="w-full px-4 py-3.5 rounded-xl border-2 border-slate-200 focus:border-[#0095da] outline-none text-sm font-semibold bg-slate-50 focus:bg-white transition-all"
                     />
                   </div>
                   <div>
@@ -231,7 +231,7 @@ const Contact = () => {
                       value={form.phone}
                       onChange={handleChange}
                       placeholder="+91 98765 43210"
-                      className="w-full px-4 py-3.5 rounded-xl border-2 border-slate-200 focus:border-[#0084c7] outline-none text-sm font-semibold bg-slate-50 focus:bg-white transition-all"
+                      className="w-full px-4 py-3.5 rounded-xl border-2 border-slate-200 focus:border-[#0095da] outline-none text-sm font-semibold bg-slate-50 focus:bg-white transition-all"
                     />
                   </div>
                 </div>
@@ -244,7 +244,7 @@ const Contact = () => {
                     value={form.email}
                     onChange={handleChange}
                     placeholder="name@example.com"
-                    className="w-full px-4 py-3.5 rounded-xl border-2 border-slate-200 focus:border-[#0084c7] outline-none text-sm font-semibold bg-slate-50 focus:bg-white transition-all"
+                    className="w-full px-4 py-3.5 rounded-xl border-2 border-slate-200 focus:border-[#0095da] outline-none text-sm font-semibold bg-slate-50 focus:bg-white transition-all"
                   />
                 </div>
 
@@ -257,7 +257,7 @@ const Contact = () => {
                     value={form.message}
                     onChange={handleChange}
                     placeholder="How can our clinical team help you?"
-                    className="w-full px-4 py-3.5 rounded-xl border-2 border-slate-200 focus:border-[#0084c7] outline-none text-sm font-semibold bg-slate-50 focus:bg-white transition-all resize-none"
+                    className="w-full px-4 py-3.5 rounded-xl border-2 border-slate-200 focus:border-[#0095da] outline-none text-sm font-semibold bg-slate-50 focus:bg-white transition-all resize-none"
                   />
                 </div>
 
@@ -266,7 +266,7 @@ const Contact = () => {
                   type="submit"
                   className="w-full py-4 rounded-xl font-black text-xs uppercase tracking-wider text-white shadow-md hover:shadow-lg flex items-center justify-center gap-2"
                   style={{
-                    background: 'linear-gradient(90deg, #15729d 0%, #208287 50%, #30946d 100%)',
+                    background: 'linear-gradient(90deg, #0095da 0%, #10a877 50%, #8cc63f 100%)',
                   }}
                 >
                   <Send size={15} />

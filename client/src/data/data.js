@@ -12,6 +12,7 @@ export const hospitalInfo = {
     twitter: 'https://x.com/Billrothch',
     youtube: 'https://www.youtube.com/@billrothhospitals',
     instagram: 'https://www.instagram.com/billrothhospitals/',
+    linkedin: 'https://www.linkedin.com/company/billroth-hospitals',
   },
 };
 
@@ -22,10 +23,11 @@ export const navLinks = [
     lines: ['ABOUT', 'US'],
     path: '/about',
     dropdown: [
-      { label: 'About Billroth', path: '/about' },
-      { label: "Founder's Vision", path: '/about' },
-      { label: 'Leadership & Management', path: '/about' },
-      { label: 'Accreditations & Awards', path: '/about' },
+      { label: 'Founder', path: '/founder' },
+      { label: 'MD & Chairman', path: '/md-chairman' },
+      { label: 'Vision & Mission', path: '/vision-mission' },
+      { label: 'History', path: '/history' },
+      { label: 'Milestone', path: '/milestone' },
     ],
   },
   {
@@ -47,23 +49,47 @@ export const navLinks = [
   {
     label: 'PATIENTS & VISITORS',
     lines: ['PATIENTS &', 'VISITORS'],
-    path: '/health-packages',
+    path: '/patient-guide',
     dropdown: [
-      { label: 'Master Health Checkups', path: '/health-packages' },
-      { label: 'Insurance & TPA Services', path: '/health-packages' },
-      { label: 'Admission & Discharge Guide', path: '/health-packages' },
-      { label: 'Visitor Guidelines', path: '/health-packages' },
+      { label: 'Testimonials', path: '/testimonials' },
+      { label: 'Corporates', path: '/corporates' },
+      { label: 'International Patients', path: '/international-patients' },
+      { label: 'Patient Guide', path: '/patient-guide' },
+      { label: "TPA's", path: '/tpas' },
     ],
   },
   {
-    label: 'FACILITIES & DIAGNOSTICS',
-    lines: ['FACILITIES &', 'DIAGNOSTICS'],
-    path: '/departments',
+    label: 'FACILITIES & DIAGNOSTIC SERVICES',
+    lines: ['FACILITIES &', 'DIAGNOSTIC SERVICES'],
+    path: '/facilities',
     dropdown: [
-      { label: '24/7 Emergency & Trauma Care', path: '/departments' },
-      { label: 'Advanced Radiology & Imaging', path: '/departments' },
-      { label: 'NABL Certified Laboratory', path: '/departments' },
-      { label: 'State-of-the-art ICU & CCU', path: '/departments' },
+      {
+        label: 'Radiology and Imaging sciences',
+        path: '/radiology-imaging',
+        subItems: [
+          { label: 'TMT', path: '/tmt' },
+          { label: 'EEG', path: '/eeg' },
+          { label: 'PFT', path: '/pft' },
+          { label: 'Mammography', path: '/mammography' },
+          { label: 'CT Scan', path: '/ct-scan' },
+          { label: 'MRI', path: '/mri' },
+          { label: '2D Echo', path: '/2d-echo' },
+          { label: 'X-Ray', path: '/x-ray' },
+          { label: 'Ultrasound', path: '/ultrasound' },
+          { label: 'CT Angiogram', path: '/ct-angiogram' },
+        ],
+      },
+      { label: 'Cath Lab', path: '/cath-lab' },
+      { label: 'Blood Transfusion services', path: '/blood-transfusion-services' },
+      { label: 'Ambulance', path: '/ambulance' },
+      { label: 'Emergency Services&Trauma Care', path: '/emergency-services-trauma-care' },
+      { label: 'Physiotherapy', path: '/physiotherapy' },
+      { label: 'Lab Facilities', path: '/lab-facilities' },
+      { label: 'Dialysis', path: '/dialysis' },
+      { label: 'Endoscopy', path: '/endoscopy' },
+      { label: 'Intensive Care Units ( ICU & NICU)', path: '/intensive-care-units' },
+      { label: 'Colonoscopy', path: '/colonoscopy' },
+      { label: 'ECG', path: '/ecg' },
     ],
   },
   {
@@ -71,12 +97,20 @@ export const navLinks = [
     lines: ['NEWS &', 'EVENTS'],
     path: '/events',
     dropdown: [
-      { label: 'Health Blogs & Insights', path: '/blog' },
-      { label: 'Medical Conferences & CME', path: '/events' },
-      { label: 'Community Health Camps', path: '/events' },
+      { label: 'Newsletter', path: '/newsletter' },
+      { label: 'Events', path: '/events' },
+      { label: 'Terms and conditions', path: '/terms-and-conditions' },
     ],
   },
-  { label: 'CONTACT US', lines: ['CONTACT', 'US'], path: '/contact' },
+  {
+    label: 'CONTACT US',
+    lines: ['CONTACT', 'US'],
+    path: '/contact',
+    dropdown: [
+      { label: 'Contact Us', path: '/contact' },
+      { label: 'Careers', path: '/careers' },
+    ],
+  },
 ];
 
 export const departments = [
@@ -316,3 +350,242 @@ export const doctors = [
     experience: 13,
   },
 ];
+
+export const surgicalStats = [
+  { value: 33, suffix: '+', label: 'Years of Experience', icon: 'Award', color: 'from-[#0095da] to-[#0077b6]' },
+  { value: 410, suffix: 'K+', label: 'Hernia Surgeries', icon: 'ShieldCheck', color: 'from-[#0095da] to-[#8cc63f]' },
+  { value: 20100, suffix: '+', label: 'Laparoscopy Surgeries', icon: 'Activity', color: 'from-[#3cb878] to-[#8cc63f]' },
+  { value: 1000, suffix: '+', label: 'Reconstructive Surgeries', icon: 'HeartPulse', color: 'from-[#8cc63f] to-[#0095da]' },
+];
+
+export const founderData = {
+  founder: {
+    name: 'Dr. V. Jeganathan',
+    honorific: 'Late Dr. V. Jeganathan',
+    title: 'Founder of Billroth Hospitals',
+    establishedDate: '30th November 1990',
+    speciality: 'Surgical Gastroenterologist, LASER & Laparoscopic Surgeon',
+    image: 'https://billrothhospitals.com/wp-content/uploads/2023/10/Jeganathan.png',
+    bio: [
+      'Billroth Hospital was established by late Dr. V. Jeganathan on 30th November 1990. A born leader, he turned several heads by employing cutting-edge medical technologies that make Billroth the most trusted healthcare provider in South India even today. Besides being the Chairman of Billroth hospitals, Dr. V. Jeganathan was one of the leading Surgical Gastroenterologists, LASER and Laparoscopic Surgeons in the country.',
+      'He worked hard all his life and believed in uplifting others in the journey of his own growth. He was one of the major contributors to the medical relief efforts for those affected by the 2005 Tsunami. Even today the people of Vijayapuram remember him and have erected a statue in his honour.',
+      "His only ambition was to develop a patient-centric approach that is transparent, ethical, respectful and compassionate. A true team builder, Dr. V. Jeganathan has been successful in establishing an organization wherein everyone is willing to walk the extra mile and feel empowered from within to make a positive difference in people's lives. Not only in India, today the name Billroth has defied boundaries and earned a global repute with satisfied patients all across the world."
+    ],
+    quote: 'Healthcare is not just medical treatment; it is a sacred commitment to uplift human lives with compassion, integrity, and uncompromised excellence.'
+  },
+  successor: {
+    name: 'Dr. Rajesh Jeganathan',
+    title: 'Chairman & Managing Director',
+    tenure: '2007 – Present',
+    leadershipStory: [
+      "On May 17th, 2007, when the founder was living his dream of making quality healthcare accessible to the common man, he met his sad end. That is when his son Dr. Rajesh Jeganathan, who was only 26 years old then, had to shoulder the entire responsibility and carry forward his father's dream.",
+      'In his able hands, Billroth continued to grow and has now become a name that reads synonymous to expert and most reliable healthcare in the country. Dr. Rajesh introduced the first Dual Source CT Scan in Tamil Nadu. He introduced several other departments and transformed Billroth from Multi-Specialty to Super Specialty Hospital.',
+      "The hospital has emerged to be one of the pioneers in RapidArc Treatment for Cancer and NICU with sophisticated modern labor wards. Dr. Rajesh has also been undertaking several philanthropic projects offering free healthcare services for the poor and needy. It is this 'Giver's Gain' policy that has won millions of hearts and made Billroth what it is today."
+    ],
+    quote: "The organization's success lies in the collective success of every individual and the enduring trust of our patients."
+  },
+  theodorBillroth: {
+    name: 'Dr. Christian Albert Theodor Billroth (1829 – 1894)',
+    role: 'The Inspiration Behind the Name',
+    description: "The name 'Billroth' was coined from Dr. V. Jeganathan's lifelong inspiration, Dr. Theodor Billroth, the visionary surgeon widely celebrated as the Father of Modern Abdominal Surgery, who pioneered the world's first successful stomach resection (Billroth I & II procedures)."
+  },
+  historyImage: 'https://billrothhospitals.com/wp-content/uploads/2023/11/history.png'
+};
+
+export const coreValues = [
+  {
+    id: 1,
+    title: 'Ethical Healthcare',
+    tagline: 'Transparent & Uncompromised Practice',
+    description: 'Upholding strict medical ethics, evidence-based treatments, and honest, transparent clinical protocols across all disciplines.',
+    icon: 'ShieldCheck',
+    color: '#0095da',
+    accentGradient: 'from-[#0095da] to-[#0077b6]'
+  },
+  {
+    id: 2,
+    title: 'Respect for Individuals',
+    tagline: 'Valuing Every Human Dignity',
+    description: 'Honoring every patient, family member, physician, nurse, and employee with sincere equality, warmth, and dignity.',
+    icon: 'Users',
+    color: '#0077b6',
+    accentGradient: 'from-[#0077b6] to-[#0095da]'
+  },
+  {
+    id: 3,
+    title: 'Compassion',
+    tagline: 'Empathy in Every Touch',
+    description: 'Providing genuine empathy, attentive emotional support, and wholehearted care to patients in their most vulnerable moments.',
+    icon: 'HeartHandshake',
+    color: '#3cb878',
+    accentGradient: 'from-[#0095da] to-[#8cc63f]'
+  },
+  {
+    id: 4,
+    title: 'Commitment to Quality',
+    tagline: 'Excellence in Medical Outcomes',
+    description: 'Relentless pursuit of clinical precision, advanced surgical technology, continuous medical training, and NABH/NABL standards.',
+    icon: 'Sparkles',
+    color: '#8cc63f',
+    accentGradient: 'from-[#3cb878] to-[#8cc63f]'
+  },
+  {
+    id: 5,
+    title: 'Respect Patients',
+    tagline: 'Patient-First Philosophy',
+    description: 'Putting patient comfort, privacy, informed consent, and holistic recovery at the center of every clinical decision.',
+    icon: 'Heart',
+    color: '#0095da',
+    accentGradient: 'from-[#004b77] to-[#0095da]'
+  }
+];
+
+export const visionMission = {
+  vision: {
+    title: 'Our Vision',
+    badge: 'Future-Focused Healing',
+    statement: 'To be the most trusted, patient-centric super-specialty healthcare institution in South India and globally, providing accessible, compassionate, and world-class tertiary medical care to all sections of society.',
+    points: [
+      'Accessible tertiary healthcare for every citizen without economic discrimination.',
+      'Global benchmark in laparoscopic, gastrointestinal, and oncological surgery.',
+      'Pioneering precision robotic surgery and advanced diagnostic technologies.'
+    ]
+  },
+  mission: {
+    title: 'Our Mission',
+    badge: 'Clinical & Human Excellence',
+    statement: 'To provide clinical excellence through cutting-edge medical technologies, renowned specialists, ethical practices, and profound human empathy to heal, comfort, and empower lives.',
+    points: [
+      'Equip super-specialty departments with world-leading medical infrastructure.',
+      'Sustain impactful community health camps and disaster relief initiatives.',
+      'Deliver transparent, zero-error, compassionate care with a patient-first ethos.'
+    ]
+  }
+};
+
+export const timelineMilestones = [
+  {
+    year: '1953',
+    date: '19th December 1953',
+    category: 'Early Life',
+    title: 'Humble Roots in Nerkunam Village',
+    description: 'Dr. V. Jeganathan was born on 19th December 1953 in Nerkunam Village to a farmer; he once tied the tails of two cows to prevent them from running away.',
+    tag: 'Birth & Childhood',
+    icon: 'Home',
+    image: 'https://billrothhospitals.com/wp-content/uploads/2023/11/Fonder-Timeline-Website-01.png'
+  },
+  {
+    year: '1978 – 1981',
+    date: '1978 – 1981',
+    category: 'Education & Leadership',
+    title: 'Madras Medical College & Chairman in 1977',
+    description: 'Dr. V. Jeganathan completed his schooling in his village. 1978 – Completed MBBS at Madras Medical College where he became Chairman in 1977. 1981 – Pursued Masters in General Surgery.',
+    tag: 'Medical Excellence',
+    icon: 'GraduationCap',
+    image: 'https://billrothhospitals.com/wp-content/uploads/2023/11/Fonder-Timeline-Website-02.png'
+  },
+  {
+    year: '1987 – 1990',
+    date: '1987 – 1990',
+    category: 'Philanthropy',
+    title: 'Free Consultations Across Chennai',
+    description: 'Dr. V. Jeganathan returned to India & started giving free consultation in several hospitals between 1987 and 1990.',
+    tag: 'Community Service',
+    icon: 'Stethoscope',
+    image: 'https://billrothhospitals.com/wp-content/uploads/2023/11/Fonder-Timeline-Website-03.png'
+  },
+  {
+    year: '1990',
+    date: 'Historic Inspiration',
+    category: 'Genesis',
+    title: "Origin of the Name 'Billroth'",
+    description: "The name 'Billroth' was coined from Dr. V. Jeganathan's inspiration, Dr. Theodor Billroth, the father of modern Abdominal Surgery.",
+    tag: 'Historic Inspiration',
+    icon: 'BookOpen',
+    image: 'https://billrothhospitals.com/wp-content/uploads/2023/11/Fonder-Timeline-Website-04.png'
+  },
+  {
+    year: '1990 & 1996',
+    date: 'Nov 30, 1990 & Dec 13, 1996',
+    category: 'Hospital Genesis',
+    title: "Inauguration of 'A' & 'B' Blocks",
+    description: "November 30th 1990 – 'A' block was inaugurated, 13th December 1996 – 'B' Block was inaugurated and the outpatient consultation was free everywhere.",
+    tag: 'Hospital Foundation',
+    icon: 'Building2',
+    image: 'https://billrothhospitals.com/wp-content/uploads/2023/11/Fonder-Timeline-Website-05.png'
+  },
+  {
+    year: '1998',
+    date: 'Surgical Milestones',
+    category: 'Clinical Mastery',
+    title: 'Pioneer in Laparoscopic & GI Surgeries',
+    description: 'Billroth Hospitals established a name for itself in Basic and advanced laparoscopic surgeries / surgical gastroenterology.',
+    tag: 'Pioneering Surgery',
+    icon: 'Activity',
+    image: 'https://billrothhospitals.com/wp-content/uploads/2023/11/Fonder-Timeline-Website-06.png'
+  },
+  {
+    year: '2003 & 2007',
+    date: '2003 – 2007',
+    category: 'Expansion',
+    title: 'Acquisition of Kaliappa Hospital & S Block',
+    description: '2003 – Billroth Hospitals acquired a 100 bedded Chennai Kaliappa Hospital. Shenoy Nagar branch saw the addition of the S Block in 2007.',
+    tag: 'Campus Expansion',
+    icon: 'Building',
+    image: 'https://billrothhospitals.com/wp-content/uploads/2023/11/Fonder-Timeline-Website-07.png'
+  },
+  {
+    year: '2005',
+    date: '2005 Disaster Relief',
+    category: 'Disaster Relief',
+    title: '2005 Tsunami Relief & Statue in Vijayapuram',
+    description: 'Dr. V. Jeganathan conducted free medical camps for the poor, provided medical relief for the Tsunami hit victims in 2005, People of Vijayapuram have even erected a statue in his honour.',
+    tag: 'Heroic Humanitarian',
+    icon: 'HeartHandshake',
+    image: 'https://billrothhospitals.com/wp-content/uploads/2023/11/Fonder-Timeline-Website-09.png'
+  },
+  {
+    year: 'High End Tech',
+    date: 'Linear Accelerator & CT',
+    category: 'New Era',
+    title: 'Linear Accelerator, Dual Source CT & Rapid Arc',
+    description: 'Dr. V. Jeganathan introduced Linear Accelerator to combat cancer. Later, his son introduced the Rapid Arc and the Dual Source CT Scanner for the first time in Tamil Nadu.',
+    tag: 'Technological Renaissance',
+    icon: 'Zap',
+    image: 'https://billrothhospitals.com/wp-content/uploads/2023/11/Fonder-Timeline-Website-08.png'
+  }
+];
+
+export const hospitalHeritage = [
+  {
+    title: 'Shenoy Nagar Super-Specialty Campus',
+    badge: 'Flagship Tertiary Care Facility',
+    address: '43, Lakshmi Talkies Road, Shenoy Nagar, Chennai – 600 030',
+    capacity: '350+ Beds & 8 Modular OTs',
+    description: 'The monumental flagship center housing comprehensive cardiology, neurology, oncology, surgical gastroenterology, and emergency trauma facilities.',
+    highlights: [
+      '24/7 Emergency & Level 1 Trauma Care',
+      'Tamil Nadu’s First Dual Source CT & RapidArc Suite',
+      'Advanced High-Energy Linear Accelerator for Oncology',
+      'Comprehensive NICU & PICU with Modern Labor Ward'
+    ],
+    image: 'https://images.unsplash.com/photo-1587351021759-3e566b6af7cc?auto=format&fit=crop&w=1000&q=80'
+  },
+  {
+    title: 'RA Puram Multi-Specialty Campus',
+    badge: 'South Chennai Center of Excellence',
+    address: '52, 2nd Main Road, RA Puram, Chennai – 600 028',
+    capacity: '100+ Beds & Dedicated Daycare Suites',
+    description: 'Acquired in 2003 as Chennai Kaliappa Hospital, this center provides premier orthopedics, women & childcare, master health checkups, and outpatient specialty clinics.',
+    highlights: [
+      'Heritage Kaliappa Multi-Specialty Center',
+      'State-of-the-Art Joint Replacement & Arthroscopy',
+      'Comprehensive Obstetric & Gynecological Care',
+      'Master Health Checkups & Advanced Diagnostics'
+    ],
+    image: 'https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?auto=format&fit=crop&w=1000&q=80'
+  }
+];
+
+export const founderMilestones = timelineMilestones;
+

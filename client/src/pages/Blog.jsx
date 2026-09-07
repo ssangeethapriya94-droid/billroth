@@ -5,25 +5,42 @@ import { blogs } from '../data/data';
 
 const Blog = () => {
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen bg-slate-50">
       {/* Header */}
-      <div className="bg-gradient-to-r from-[#0a1f4e] to-[#2f5aae] py-16 px-4">
-        <div className="max-w-7xl mx-auto text-center text-white">
-          <motion.h1
+      <div
+        className="relative py-20 px-4 text-center overflow-hidden text-white"
+        style={{
+          background: 'linear-gradient(135deg, #004b77 0%, #0077b6 35%, #0095da 65%, #3cb878 85%, #8cc63f 100%)',
+        }}
+      >
+        <div
+          className="absolute inset-0 opacity-10"
+          style={{
+            backgroundImage: 'radial-gradient(circle at 2px 2px, white 1px, transparent 0)',
+            backgroundSize: '36px 36px',
+          }}
+        />
+        <div className="container-custom text-center text-white relative z-10">
+          <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            className="text-4xl sm:text-5xl font-extrabold mb-4"
+            className="max-w-3xl 2xl:max-w-4xl mx-auto space-y-4"
           >
-            Health <span className="text-[#a6ce39]">Blog</span>
-          </motion.h1>
-          <p className="text-blue-200 text-lg max-w-xl mx-auto">
-            Stay informed with the latest health insights, medical advances, and wellness tips from Billroth's expert team.
-          </p>
+            <span className="inline-block bg-white/15 text-[#8cc63f] text-xs font-black px-4 py-1.5 rounded-full uppercase tracking-wider border border-white/20">
+              Health Knowledge Hub
+            </span>
+            <h1 className="text-4xl sm:text-5xl font-black text-white">
+              Health <span className="text-[#8cc63f]">Articles & Blogs</span>
+            </h1>
+            <p className="text-white/90 text-base sm:text-lg 2xl:text-xl">
+              Stay informed with the latest health insights, medical advances, and wellness tips from Billroth's expert team.
+            </p>
+          </motion.div>
         </div>
       </div>
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
+      <div className="container-custom py-16 2xl:py-24">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4 gap-8 2xl:gap-10">
           {[...blogs, ...blogs].map((blog, i) => (
             <motion.article
               key={`${blog.id}-${i}`}
@@ -42,7 +59,7 @@ const Blog = () => {
                   }}
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
-                <span className="absolute bottom-3 left-3 bg-[#a6ce39] text-white text-xs font-bold px-3 py-1 rounded-full">
+                <span className="absolute bottom-3 left-3 bg-[#8cc63f] text-slate-950 text-xs font-bold px-3 py-1 rounded-full">
                   {blog.category}
                 </span>
               </div>
@@ -50,7 +67,7 @@ const Blog = () => {
                 <div className="flex items-center gap-1.5 text-gray-400 text-xs mb-3">
                   <Calendar size={12} /> {blog.date}
                 </div>
-                <h3 className="font-extrabold text-gray-800 text-base leading-snug mb-3 group-hover:text-[#2f5aae] transition-colors">
+                <h3 className="font-extrabold text-gray-800 text-base leading-snug mb-3 group-hover:text-[#0095da] transition-colors">
                   {blog.title}
                 </h3>
                 <p className="text-gray-500 text-sm leading-relaxed line-clamp-2 mb-4">
@@ -58,7 +75,7 @@ const Blog = () => {
                 </p>
                 <Link
                   to={`/blog/${blog.slug}`}
-                  className="inline-flex items-center gap-1.5 text-[#2f5aae] text-sm font-bold hover:gap-3 transition-all"
+                  className="inline-flex items-center gap-1.5 text-[#0095da] text-sm font-bold hover:gap-3 transition-all"
                 >
                   Read More <ArrowRight size={14} />
                 </Link>

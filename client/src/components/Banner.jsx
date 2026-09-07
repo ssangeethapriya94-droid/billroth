@@ -7,15 +7,15 @@ const Banner = () => {
     <section
       className="relative overflow-hidden text-white"
       style={{
-        background: 'linear-gradient(135deg, #093c57 0%, #136085 35%, #1c7a87 70%, #288c69 100%)',
+        background: 'linear-gradient(135deg, #004b77 0%, #0077b6 35%, #0095da 65%, #3cb878 85%, #8cc63f 100%)',
       }}
     >
       {/* Background Soft Glows */}
       <div className="absolute inset-0 pointer-events-none overflow-hidden">
-        <div className="absolute -top-40 -right-40 w-96 h-96 bg-[#8cc63f]/15 rounded-full blur-[100px]" />
-        <div className="absolute -bottom-40 -left-40 w-96 h-96 bg-[#0084c7]/20 rounded-full blur-[100px]" />
+        <div className="absolute -top-40 -right-40 w-96 h-96 bg-[#8cc63f]/25 rounded-full blur-[100px]" />
+        <div className="absolute -bottom-40 -left-40 w-96 h-96 bg-[#0095da]/30 rounded-full blur-[100px]" />
         <div
-          className="absolute inset-0 opacity-[0.04]"
+          className="absolute inset-0 opacity-[0.05]"
           style={{
             backgroundImage: 'radial-gradient(circle at 1px 1px, white 1px, transparent 0)',
             backgroundSize: '28px 28px',
@@ -24,15 +24,15 @@ const Banner = () => {
       </div>
 
       {/* Main Hero Container */}
-      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-12 pb-24 lg:pt-16 lg:pb-28">
-        <div className="grid lg:grid-cols-12 gap-12 lg:gap-8 items-center">
+      <div className="relative container-custom pt-12 pb-24 lg:pt-16 lg:pb-28 2xl:pt-20 2xl:pb-32">
+        <div className="grid lg:grid-cols-12 gap-12 lg:gap-8 2xl:gap-14 items-center">
           
           {/* Left Hero Content (7 Columns) */}
           <motion.div
             initial={{ opacity: 0, y: 25 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
-            className="lg:col-span-7 text-left space-y-6"
+            className="lg:col-span-7 text-left space-y-6 2xl:space-y-8"
           >
             {/* Tag Badge */}
             <div className="inline-flex items-center gap-2 bg-white/15 backdrop-blur-md px-4 py-1.5 rounded-full border border-white/20 text-xs font-extrabold text-white shadow-sm">
@@ -41,18 +41,18 @@ const Banner = () => {
             </div>
 
             {/* Headline */}
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black tracking-tight text-white leading-[1.12]">
+            <h1 className="text-4xl sm:text-5xl lg:text-6xl 2xl:text-7xl font-black tracking-tight text-white leading-[1.12]">
               Your Health,{' '}
               <span className="text-[#8cc63f] drop-shadow-sm">
                 Our Priority
               </span>
-              <span className="block text-2xl sm:text-3xl lg:text-4xl font-bold text-teal-100 mt-2">
+              <span className="block text-2xl sm:text-3xl lg:text-4xl 2xl:text-5xl font-bold text-white/95 mt-2">
                 33+ Years of Compassionate Healing
               </span>
             </h1>
 
             {/* Subtitle */}
-            <p className="text-base sm:text-lg text-white/90 leading-relaxed max-w-2xl font-normal">
+            <p className="text-base sm:text-lg 2xl:text-xl text-white/95 leading-relaxed max-w-2xl 2xl:max-w-3xl font-normal">
               Empowering lives with over 150+ specialist doctors, modular operation theatres, and 24/7 dedicated emergency & trauma care in Chennai.
             </p>
 
@@ -60,9 +60,12 @@ const Banner = () => {
             <div className="flex flex-wrap items-center gap-4 pt-2">
               <Link
                 to="/appointment"
-                className="inline-flex items-center gap-2.5 bg-[#8cc63f] hover:bg-[#7cb632] text-slate-950 px-7 py-4 rounded-full font-black text-sm shadow-xl shadow-teal-950/20 transition-all duration-200 active:scale-95 group"
+                className="inline-flex items-center gap-2.5 text-white px-7 py-4 rounded-full font-black text-sm shadow-xl shadow-cyan-950/30 hover:shadow-2xl transition-all duration-200 active:scale-95 group"
+                style={{
+                  background: 'linear-gradient(90deg, #0095da 0%, #10a877 50%, #8cc63f 100%)',
+                }}
               >
-                <Calendar size={17} className="text-slate-950" />
+                <Calendar size={17} className="text-white" />
                 <span>Book an Appointment</span>
                 <ArrowRight size={15} className="group-hover:translate-x-1 transition-transform" />
               </Link>
@@ -77,18 +80,18 @@ const Banner = () => {
             </div>
 
             {/* Trust Metrics Bar */}
-            <div className="pt-6 border-t border-white/15 grid grid-cols-3 gap-4 max-w-lg">
-              <div className="border-r border-white/15 pr-2">
-                <div className="text-2xl sm:text-3xl font-black text-white">33+</div>
-                <div className="text-xs text-teal-100 font-medium">Years of Excellence</div>
+            <div className="pt-6 border-t border-white/20 grid grid-cols-3 gap-4 max-w-lg 2xl:max-w-xl">
+              <div className="border-r border-white/20 pr-2">
+                <div className="text-2xl sm:text-3xl 2xl:text-4xl font-black text-white">33+</div>
+                <div className="text-xs 2xl:text-sm text-white/85 font-medium">Years of Excellence</div>
               </div>
-              <div className="border-r border-white/15 pr-2">
-                <div className="text-2xl sm:text-3xl font-black text-[#8cc63f]">300K+</div>
-                <div className="text-xs text-teal-100 font-medium">Patients Treated</div>
+              <div className="border-r border-white/20 pr-2">
+                <div className="text-2xl sm:text-3xl 2xl:text-4xl font-black text-[#8cc63f]">300K+</div>
+                <div className="text-xs 2xl:text-sm text-white/85 font-medium">Patients Treated</div>
               </div>
               <div>
-                <div className="text-2xl sm:text-3xl font-black text-white">150+</div>
-                <div className="text-xs text-teal-100 font-medium">Expert Doctors</div>
+                <div className="text-2xl sm:text-3xl 2xl:text-4xl font-black text-white">150+</div>
+                <div className="text-xs 2xl:text-sm text-white/85 font-medium">Expert Doctors</div>
               </div>
             </div>
           </motion.div>
@@ -107,16 +110,16 @@ const Banner = () => {
                 <img
                   src="https://billrothhospitals.com/wp-content/uploads/2024/02/hospital-care.png"
                   alt="Billroth Hospitals Patient Care"
-                  className="w-full h-80 sm:h-96 object-cover rounded-2xl"
+                  className="w-full h-80 sm:h-96 2xl:h-[480px] object-cover rounded-2xl"
                   onError={(e) => {
                     e.target.src = "https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?auto=format&fit=crop&w=800&q=80";
                   }}
                 />
 
-                <div className="absolute inset-0 bg-gradient-to-t from-[#093c57]/80 via-transparent to-transparent rounded-2xl" />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#003855]/85 via-transparent to-transparent rounded-2xl" />
 
                 {/* Bottom Overlay Info on Image */}
-                <div className="absolute bottom-4 left-4 right-4 p-4 rounded-xl bg-[#093c57]/90 backdrop-blur-md border border-white/15 text-left">
+                <div className="absolute bottom-4 left-4 right-4 p-4 rounded-xl bg-[#003855]/90 backdrop-blur-md border border-white/15 text-left">
                   <div className="flex items-center gap-2 mb-1">
                     <HeartPulse size={16} className="text-[#8cc63f]" />
                     <span className="text-xs font-bold text-white uppercase tracking-wider">Super Specialty Care</span>
@@ -131,12 +134,12 @@ const Banner = () => {
                 transition={{ duration: 4, repeat: Infinity, ease: 'easeInOut' }}
                 className="absolute -top-4 -left-4 sm:-left-6 bg-white text-slate-900 rounded-2xl shadow-xl p-3.5 border border-slate-100 flex items-center gap-3 z-10"
               >
-                <div className="w-10 h-10 rounded-xl bg-teal-50 text-[#15729d] flex items-center justify-center font-bold">
+                <div className="w-10 h-10 rounded-xl bg-sky-50 text-[#0095da] flex items-center justify-center font-bold">
                   <Award size={20} />
                 </div>
                 <div className="text-left">
                   <div className="text-xs font-black text-slate-900">NABH Accredited</div>
-                  <div className="text-[11px] text-teal-700 font-bold">Clinical Quality</div>
+                  <div className="text-[11px] text-[#0095da] font-bold">Clinical Quality</div>
                 </div>
               </motion.div>
 
@@ -151,7 +154,7 @@ const Banner = () => {
                 </div>
                 <div className="text-left">
                   <div className="text-xs font-black text-slate-900">150+ Specialists</div>
-                  <div className="text-[11px] text-[#15729d] font-bold">Doctor Consultations</div>
+                  <div className="text-[11px] text-[#0095da] font-bold">Doctor Consultations</div>
                 </div>
               </motion.div>
 

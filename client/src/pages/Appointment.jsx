@@ -44,7 +44,7 @@ const Appointment = () => {
             onClick={() => setSubmitted(false)}
             className="w-full text-white py-3.5 rounded-xl font-bold text-xs uppercase tracking-wider shadow-md"
             style={{
-              background: 'linear-gradient(90deg, #15729d 0%, #208287 50%, #30946d 100%)',
+              background: 'linear-gradient(90deg, #0095da 0%, #10a877 50%, #8cc63f 100%)',
             }}
           >
             Book Another Appointment
@@ -60,7 +60,7 @@ const Appointment = () => {
       <div
         className="relative py-20 px-4 text-center overflow-hidden text-white"
         style={{
-          background: 'linear-gradient(135deg, #093c57 0%, #136085 35%, #1c7a87 70%, #288c69 100%)',
+          background: 'linear-gradient(135deg, #004b77 0%, #0077b6 35%, #0095da 65%, #3cb878 85%, #8cc63f 100%)',
         }}
       >
         <div
@@ -73,22 +73,22 @@ const Appointment = () => {
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          className="relative max-w-3xl mx-auto space-y-4"
+          className="relative max-w-3xl 2xl:max-w-4xl mx-auto space-y-4"
         >
           <span className="inline-block bg-white/15 text-[#8cc63f] text-xs font-black px-4 py-1.5 rounded-full uppercase tracking-wider border border-white/20">
             Online Doctor Consultation
           </span>
-          <h1 className="text-4xl sm:text-5xl font-black text-white">
+          <h1 className="text-4xl sm:text-5xl 2xl:text-6xl font-black text-white">
             Book an <span className="text-[#8cc63f]">Appointment</span>
           </h1>
-          <p className="text-teal-100 text-base sm:text-lg">
+          <p className="text-white/90 text-base sm:text-lg 2xl:text-xl">
             Schedule your consultation with top specialists at Billroth Hospitals Chennai.
           </p>
         </motion.div>
       </div>
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-        <div className="grid lg:grid-cols-3 gap-10">
+      <div className="container-custom py-16 2xl:py-24">
+        <div className="grid lg:grid-cols-3 gap-10 2xl:gap-14">
           
           {/* Left Sidebar */}
           <div className="space-y-6">
@@ -99,7 +99,7 @@ const Appointment = () => {
               <div className="space-y-4">
                 {whyChoose.map((item) => (
                   <div key={item.title} className="flex items-start gap-3">
-                    <div className="w-10 h-10 bg-cyan-50 text-[#0084c7] rounded-xl flex items-center justify-center text-lg flex-shrink-0">
+                    <div className="w-10 h-10 bg-sky-50 text-[#0095da] rounded-xl flex items-center justify-center text-lg flex-shrink-0">
                       {item.icon}
                     </div>
                     <div>
@@ -147,7 +147,7 @@ const Appointment = () => {
                     value={form.name}
                     onChange={handleChange}
                     placeholder="Enter full name"
-                    className="w-full px-4 py-3.5 rounded-xl border-2 border-slate-200 focus:border-[#0084c7] outline-none text-sm font-semibold bg-slate-50 focus:bg-white transition-all"
+                    className="w-full px-4 py-3.5 rounded-xl border-2 border-slate-200 focus:border-[#0095da] outline-none text-sm font-semibold bg-slate-50 focus:bg-white transition-all"
                   />
                 </div>
 
@@ -160,7 +160,7 @@ const Appointment = () => {
                     value={form.phone}
                     onChange={handleChange}
                     placeholder="+91 98765 43210"
-                    className="w-full px-4 py-3.5 rounded-xl border-2 border-slate-200 focus:border-[#0084c7] outline-none text-sm font-semibold bg-slate-50 focus:bg-white transition-all"
+                    className="w-full px-4 py-3.5 rounded-xl border-2 border-slate-200 focus:border-[#0095da] outline-none text-sm font-semibold bg-slate-50 focus:bg-white transition-all"
                   />
                 </div>
 
@@ -172,7 +172,7 @@ const Appointment = () => {
                       required
                       value={form.department}
                       onChange={handleChange}
-                      className="w-full appearance-none px-4 py-3.5 rounded-xl border-2 border-slate-200 focus:border-[#0084c7] outline-none text-sm font-semibold bg-slate-50 focus:bg-white transition-all"
+                      className="w-full appearance-none px-4 py-3.5 rounded-xl border-2 border-slate-200 focus:border-[#0095da] outline-none text-sm font-semibold bg-slate-50 focus:bg-white transition-all"
                     >
                       <option value="">Select Specialty</option>
                       {departments.map((d) => (
@@ -191,7 +191,7 @@ const Appointment = () => {
                     value={form.date}
                     onChange={handleChange}
                     min={new Date().toISOString().split('T')[0]}
-                    className="w-full px-4 py-3.5 rounded-xl border-2 border-slate-200 focus:border-[#0084c7] outline-none text-sm font-semibold bg-slate-50 focus:bg-white transition-all"
+                    className="w-full px-4 py-3.5 rounded-xl border-2 border-slate-200 focus:border-[#0095da] outline-none text-sm font-semibold bg-slate-50 focus:bg-white transition-all"
                   />
                 </div>
               </div>
@@ -204,7 +204,7 @@ const Appointment = () => {
                   value={form.message}
                   onChange={handleChange}
                   placeholder="Describe your health issue or any previous medical history..."
-                  className="w-full px-4 py-3.5 rounded-xl border-2 border-slate-200 focus:border-[#0084c7] outline-none text-sm font-semibold bg-slate-50 focus:bg-white transition-all resize-none"
+                  className="w-full px-4 py-3.5 rounded-xl border-2 border-slate-200 focus:border-[#0095da] outline-none text-sm font-semibold bg-slate-50 focus:bg-white transition-all resize-none"
                 />
               </div>
 
@@ -213,7 +213,7 @@ const Appointment = () => {
                 type="submit"
                 className="w-full py-4 rounded-xl font-black text-xs uppercase tracking-wider text-white shadow-md hover:shadow-lg flex items-center justify-center gap-2"
                 style={{
-                  background: 'linear-gradient(90deg, #15729d 0%, #208287 50%, #30946d 100%)',
+                  background: 'linear-gradient(90deg, #0095da 0%, #10a877 50%, #8cc63f 100%)',
                 }}
               >
                 <Calendar size={16} />

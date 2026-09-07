@@ -8,24 +8,24 @@ const BlogSection = () => {
   const [ref, inView] = useInView({ triggerOnce: true, threshold: 0.1 });
 
   return (
-    <section ref={ref} className="py-20 bg-slate-50 relative">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section ref={ref} className="py-20 2xl:py-28 bg-slate-50 relative">
+      <div className="container-custom">
         
         {/* Section Header */}
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
           <div>
-            <div className="inline-flex items-center gap-1.5 bg-blue-100/70 text-[#2f5aae] text-xs font-extrabold px-3.5 py-1.5 rounded-full uppercase tracking-wider mb-3">
+            <div className="inline-flex items-center gap-1.5 bg-sky-50 border border-sky-200/60 text-[#0095da] text-xs font-extrabold px-3.5 py-1.5 rounded-full uppercase tracking-wider mb-3">
               <BookOpen size={13} />
               <span>Health Knowledge Hub</span>
             </div>
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-slate-900 tracking-tight">
-              Latest Insights & <span className="text-[#2f5aae]">Medical Articles</span>
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl 2xl:text-6xl font-extrabold text-slate-900 tracking-tight">
+              Latest Insights & <span className="text-[#0095da]">Medical Articles</span>
             </h2>
           </div>
 
           <Link
             to="/blog"
-            className="inline-flex items-center gap-2 text-sm font-bold text-[#2f5aae] hover:text-[#1e3d7a] group"
+            className="inline-flex items-center gap-2 text-sm 2xl:text-base font-bold text-[#0095da] hover:text-[#0077b6] group"
           >
             <span>View All Health Blogs</span>
             <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
@@ -33,14 +33,14 @@ const BlogSection = () => {
         </div>
 
         {/* 4-Column Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 2xl:gap-8">
           {blogs.map((blog, i) => (
             <motion.article
               key={blog.id}
               initial={{ opacity: 0, y: 20 }}
               animate={inView ? { opacity: 1, y: 0 } : {}}
               transition={{ delay: i * 0.08, duration: 0.4 }}
-              className="group bg-white rounded-3xl overflow-hidden border border-slate-200/80 hover:border-[#2f5aae]/30 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between"
+              className="group bg-white rounded-3xl overflow-hidden border border-slate-200/80 hover:border-[#0095da]/30 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between"
             >
               <div>
                 {/* Image Container */}
@@ -54,7 +54,7 @@ const BlogSection = () => {
                     }}
                   />
                   <div className="absolute top-4 left-4">
-                    <span className="inline-block bg-white/90 backdrop-blur-md text-[#2f5aae] text-[11px] font-extrabold px-3 py-1 rounded-full uppercase tracking-wider shadow-sm">
+                    <span className="inline-block bg-white/90 backdrop-blur-md text-[#0095da] text-[11px] font-extrabold px-3 py-1 rounded-full uppercase tracking-wider shadow-sm">
                       {blog.category}
                     </span>
                   </div>
@@ -67,7 +67,7 @@ const BlogSection = () => {
                     <span>{blog.date}</span>
                   </div>
 
-                  <h3 className="font-extrabold text-slate-900 text-base leading-snug group-hover:text-[#2f5aae] transition-colors line-clamp-2">
+                  <h3 className="font-extrabold text-slate-900 text-base leading-snug group-hover:text-[#0095da] transition-colors line-clamp-2">
                     {blog.title}
                   </h3>
 
@@ -81,7 +81,7 @@ const BlogSection = () => {
               <div className="px-6 pb-6 pt-2">
                 <Link
                   to={`/blog/${blog.slug}`}
-                  className="inline-flex items-center gap-1.5 text-xs font-bold text-[#2f5aae] group-hover:text-[#1e3d7a]"
+                  className="inline-flex items-center gap-1.5 text-xs font-bold text-[#0095da] group-hover:text-[#0077b6]"
                 >
                   <span>Read Full Article</span>
                   <ArrowRight size={13} className="group-hover:translate-x-1 transition-transform" />
