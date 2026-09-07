@@ -241,28 +241,58 @@ const TPAs = () => {
           </div>
         </div>
 
-        {/* Required Documents Checklist */}
-        <div className="mt-8 p-6 sm:p-8 rounded-3xl bg-slate-900 text-white shadow-xl">
-          <div className="flex items-center gap-2 text-xs font-black uppercase tracking-wider text-[#8cc63f] mb-3">
-            <FileText size={15} />
-            <span>Documents Required at Insurance Desk</span>
-          </div>
-          <div className="grid sm:grid-cols-2 md:grid-cols-4 gap-4 text-xs text-slate-200 font-bold">
-            <div className="flex items-center gap-2 p-3 rounded-xl bg-white/10 border border-white/15">
-              <CheckCircle2 size={16} className="text-[#8cc63f] flex-shrink-0" />
-              <span>Health Insurance TPA E-Card</span>
+        {/* Required Documents Checklist with Radiant Billroth Theme */}
+        <div 
+          className="mt-10 p-7 sm:p-9 rounded-3xl text-white shadow-xl shadow-cyan-950/15 relative overflow-hidden"
+          style={{
+            background: 'linear-gradient(135deg, #003a61 0%, #005f8f 35%, #0088b8 70%, #009ddb 100%)',
+          }}
+        >
+          {/* Subtle ambient light accents */}
+          <div className="absolute top-0 right-0 w-72 h-72 bg-white/10 rounded-full blur-3xl pointer-events-none" />
+          <div className="absolute bottom-0 left-0 w-72 h-72 bg-[#8cc63f]/15 rounded-full blur-3xl pointer-events-none" />
+
+          <div className="relative z-10 space-y-4">
+            <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+              <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-white/15 backdrop-blur-md border border-white/20 text-xs font-black uppercase tracking-widest text-[#8cc63f]">
+                <FileText size={14} className="text-[#8cc63f]" />
+                <span>Quick Checklist</span>
+              </div>
+              <span className="text-xs text-sky-100/90 font-medium">Keep original &amp; digital copies ready for speedy approval</span>
             </div>
-            <div className="flex items-center gap-2 p-3 rounded-xl bg-white/10 border border-white/15">
-              <CheckCircle2 size={16} className="text-[#8cc63f] flex-shrink-0" />
-              <span>Valid Government Photo ID</span>
-            </div>
-            <div className="flex items-center gap-2 p-3 rounded-xl bg-white/10 border border-white/15">
-              <CheckCircle2 size={16} className="text-[#8cc63f] flex-shrink-0" />
-              <span>Doctor’s Prescription & Advice</span>
-            </div>
-            <div className="flex items-center gap-2 p-3 rounded-xl bg-white/10 border border-white/15">
-              <CheckCircle2 size={16} className="text-[#8cc63f] flex-shrink-0" />
-              <span>Relevant Diagnostic Lab Reports</span>
+
+            <h3 className="text-xl sm:text-2xl font-black text-white tracking-tight">
+              Documents Required at Insurance Desk
+            </h3>
+
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3.5 pt-2">
+              <div className="flex items-center gap-3 p-3.5 rounded-2xl bg-white/12 hover:bg-white/20 backdrop-blur-md border border-white/20 transition-all duration-200 group">
+                <div className="w-8 h-8 rounded-xl bg-[#8cc63f]/25 border border-[#8cc63f]/40 flex items-center justify-center text-[#8cc63f] shrink-0 group-hover:scale-110 transition-transform">
+                  <CheckCircle2 size={16} />
+                </div>
+                <span className="text-xs sm:text-[13px] font-bold text-white leading-tight">Health Insurance TPA E-Card</span>
+              </div>
+
+              <div className="flex items-center gap-3 p-3.5 rounded-2xl bg-white/12 hover:bg-white/20 backdrop-blur-md border border-white/20 transition-all duration-200 group">
+                <div className="w-8 h-8 rounded-xl bg-[#8cc63f]/25 border border-[#8cc63f]/40 flex items-center justify-center text-[#8cc63f] shrink-0 group-hover:scale-110 transition-transform">
+                  <CheckCircle2 size={16} />
+                </div>
+                <span className="text-xs sm:text-[13px] font-bold text-white leading-tight">Valid Government Photo ID</span>
+              </div>
+
+              <div className="flex items-center gap-3 p-3.5 rounded-2xl bg-white/12 hover:bg-white/20 backdrop-blur-md border border-white/20 transition-all duration-200 group">
+                <div className="w-8 h-8 rounded-xl bg-[#8cc63f]/25 border border-[#8cc63f]/40 flex items-center justify-center text-[#8cc63f] shrink-0 group-hover:scale-110 transition-transform">
+                  <CheckCircle2 size={16} />
+                </div>
+                <span className="text-xs sm:text-[13px] font-bold text-white leading-tight">Doctor’s Prescription &amp; Advice</span>
+              </div>
+
+              <div className="flex items-center gap-3 p-3.5 rounded-2xl bg-white/12 hover:bg-white/20 backdrop-blur-md border border-white/20 transition-all duration-200 group">
+                <div className="w-8 h-8 rounded-xl bg-[#8cc63f]/25 border border-[#8cc63f]/40 flex items-center justify-center text-[#8cc63f] shrink-0 group-hover:scale-110 transition-transform">
+                  <CheckCircle2 size={16} />
+                </div>
+                <span className="text-xs sm:text-[13px] font-bold text-white leading-tight">Relevant Diagnostic Lab Reports</span>
+              </div>
             </div>
           </div>
         </div>
@@ -377,8 +407,8 @@ const TPAs = () => {
               </button>
             </div>
           ) : (
-            /* Trending Providers Grid */
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 sm:gap-5">
+            /* Borderless Trending Providers Grid with Large, Clean, Animated Logos */
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 sm:gap-7">
               {filteredList.map((item, idx) => {
                 const imageUrl = `https://billrothhospitals.com/wp-content/uploads/2024/03/TPA-01-${item.logoIndex}.jpg`;
 
@@ -386,10 +416,10 @@ const TPAs = () => {
                 const isGovt = item.type.includes('Government') || item.type.includes('PSU');
                 const isTpa = item.type.includes('Third Party') || item.type.includes('TPA');
                 const badgeColor = isGovt
-                  ? 'bg-amber-50 text-amber-800 border-amber-200/80'
+                  ? 'bg-amber-100/70 text-amber-800'
                   : isTpa
-                  ? 'bg-purple-50 text-purple-700 border-purple-200/80'
-                  : 'bg-sky-50 text-[#0095da] border-sky-200/80';
+                  ? 'bg-purple-100/70 text-purple-700'
+                  : 'bg-sky-100/70 text-[#0095da]';
 
                 const shortType = isGovt
                   ? 'Govt / PSU'
@@ -402,58 +432,68 @@ const TPAs = () => {
                     key={item.id}
                     initial={{ opacity: 0, y: 15 }}
                     animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.25, delay: Math.min(idx * 0.015, 0.3) }}
-                    whileHover={{ y: -5 }}
-                    className="p-5 rounded-2xl bg-white border border-slate-200/90 hover:border-[#0095da]/50 hover:shadow-xl hover:shadow-sky-950/10 transition-all duration-300 flex flex-col justify-between group relative overflow-hidden"
+                    transition={{ duration: 0.3, delay: Math.min(idx * 0.015, 0.3) }}
+                    whileHover={{ y: -8, scale: 1.02 }}
+                    className="p-6 sm:p-7 rounded-3xl bg-white shadow-md hover:shadow-2xl hover:shadow-[#0095da]/15 transition-all duration-300 flex flex-col justify-between group relative overflow-hidden cursor-pointer"
                   >
-                    {/* Top hover gradient accent line */}
-                    <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-[#0095da] via-[#10a877] to-[#8cc63f] opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                    {/* Glowing ambient light aura on hover */}
+                    <div className="absolute inset-0 bg-gradient-to-br from-sky-400/8 via-teal-400/5 to-emerald-400/8 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none rounded-3xl" />
+                    
+                    {/* Top vibrant animated bar */}
+                    <div className="absolute top-0 left-0 right-0 h-1.5 bg-gradient-to-r from-[#0095da] via-[#10a877] to-[#8cc63f] opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
 
-                    <div className="space-y-3.5">
-                      {/* Top Header: Logo + Type Badge */}
-                      <div className="flex items-center justify-between gap-3">
-                        <div className="w-14 h-14 rounded-xl overflow-hidden bg-white border border-slate-100 shadow-sm flex-shrink-0 flex items-center justify-center p-1.5 group-hover:scale-105 group-hover:border-[#0095da]/30 transition-all duration-300">
-                          <img
-                            src={imageUrl}
-                            alt={item.name}
-                            className="max-h-full max-w-full object-contain filter brightness-95 group-hover:brightness-105 transition-all"
-                            onError={(e) => {
-                              e.target.style.display = 'none';
-                              e.target.parentElement.innerHTML = `
-                                <div class="w-full h-full rounded-lg bg-sky-50 text-[#0095da] flex items-center justify-center font-black text-xs">
-                                  ${item.name.substring(0, 2).toUpperCase()}
-                                </div>
-                              `;
-                            }}
-                          />
-                        </div>
-
-                        <span className={`text-[10px] font-black uppercase tracking-wider px-2.5 py-1 rounded-md border ${badgeColor} whitespace-nowrap`}>
+                    <div className="space-y-4 relative z-10">
+                      {/* Top Header: Category Tag Badge & Partner Label */}
+                      <div className="flex items-center justify-between gap-2">
+                        <span className={`text-[10px] sm:text-[11px] font-black uppercase tracking-wider px-3 py-1 rounded-full ${badgeColor} shadow-2xs`}>
                           {shortType}
+                        </span>
+                        <span className="text-[11px] font-semibold text-slate-400 flex items-center gap-1">
+                          <Sparkles size={11} className="text-[#0095da] opacity-75" />
+                          <span>Empanelled</span>
                         </span>
                       </div>
 
-                      {/* Insurer Name */}
-                      <div>
-                        <h4 className="text-sm font-black text-slate-900 group-hover:text-[#0095da] transition-colors leading-snug line-clamp-2 min-h-[38px]">
+                      {/* Borderless, Large, Crystal-Clear Logo Showcase Container */}
+                      <div className="w-full h-32 sm:h-38 rounded-2xl bg-slate-50/70 p-4 flex items-center justify-center group-hover:bg-white transition-all duration-300 overflow-hidden relative">
+                        <img
+                          src={imageUrl}
+                          alt={item.name}
+                          className="w-full h-full object-contain transform scale-[1.9] sm:scale-[2.15] group-hover:scale-[2.3] transition-transform duration-300 filter contrast-[1.03]"
+                          loading="lazy"
+                          onError={(e) => {
+                            e.target.style.display = 'none';
+                            e.target.parentElement.innerHTML = `
+                              <div class="w-full h-full rounded-2xl bg-gradient-to-br from-sky-50 to-teal-50 text-[#0095da] flex flex-col items-center justify-center font-black">
+                                <span class="text-2xl font-black">${item.name.substring(0, 3).toUpperCase()}</span>
+                                <span class="text-[10px] text-slate-400 font-semibold mt-1">Empanelled Partner</span>
+                              </div>
+                            `;
+                          }}
+                        />
+                      </div>
+
+                      {/* Insurer Name & Category */}
+                      <div className="pt-2">
+                        <h4 className="text-base sm:text-lg font-black text-slate-900 group-hover:text-[#0095da] transition-colors leading-snug line-clamp-2 min-h-[48px]">
                           {item.name}
                         </h4>
-                        <span className="text-[11px] font-medium text-slate-400 block truncate mt-0.5">
+                        <span className="text-xs font-semibold text-slate-400 block truncate mt-1">
                           {item.type}
                         </span>
                       </div>
                     </div>
 
-                    {/* Footer Status & Pre-Auth Indicator */}
-                    <div className="pt-3.5 border-t border-slate-100 mt-4 flex items-center justify-between">
-                      <span className="inline-flex items-center gap-1.5 text-[10px] font-black text-emerald-700 bg-emerald-50 px-2.5 py-1 rounded-full border border-emerald-200">
-                        <CheckCircle2 size={12} className="text-emerald-600" />
+                    {/* Footer Status & Pre-Auth Button */}
+                    <div className="pt-4 border-t border-slate-100/80 mt-5 flex items-center justify-between relative z-10">
+                      <span className="inline-flex items-center gap-1.5 text-[11px] font-black text-emerald-700 bg-emerald-50 px-3 py-1.5 rounded-full shadow-2xs">
+                        <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
                         <span>Cashless Active</span>
                       </span>
 
-                      <span className="text-[11px] font-bold text-slate-400 group-hover:text-[#0095da] flex items-center gap-1 transition-colors">
+                      <span className="text-xs font-black text-[#0095da] flex items-center gap-1.5 group-hover:translate-x-1 transition-transform">
                         <span>Pre-Auth</span>
-                        <ArrowRight size={11} className="group-hover:translate-x-1 transition-transform" />
+                        <ArrowRight size={13} className="text-[#0095da]" />
                       </span>
                     </div>
                   </motion.div>
