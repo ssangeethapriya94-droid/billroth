@@ -496,7 +496,19 @@ const PatientGuide = () => {
 
                         {/* Contact CTA button */}
                         {item.contact && (
-                          <div className="pt-4 mt-5 border-t border-slate-100">
+                          <div className="pt-4 mt-5 border-t border-slate-100 space-y-2">
+                            {item.id === 'health-checkup' && (
+                              <Link
+                                to="/health-checkup"
+                                className="inline-flex items-center justify-center gap-2 w-full py-3 rounded-2xl text-white font-black text-xs uppercase tracking-wider transition-all duration-300 shadow-md active:scale-98"
+                                style={{
+                                  background: 'linear-gradient(90deg, #0095da 0%, #10a877 50%, #8cc63f 100%)',
+                                }}
+                              >
+                                <HeartPulse size={15} />
+                                <span>View All 12 Packages &amp; Pricing →</span>
+                              </Link>
+                            )}
                             <a
                               href={`tel:${item.contact}`}
                               className="inline-flex items-center justify-center gap-2 w-full py-3 rounded-2xl bg-slate-900 hover:bg-[#0095da] text-white font-black text-xs uppercase tracking-wider transition-all duration-300 shadow-md active:scale-98"

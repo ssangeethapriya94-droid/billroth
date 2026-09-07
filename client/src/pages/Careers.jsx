@@ -489,7 +489,7 @@ const Careers = () => {
                         required
                         value={applicantEmail}
                         onChange={(e) => setApplicantEmail(e.target.value)}
-                        placeholder="priya@example.com"
+                        placeholder="e.g. priya.natarajan@gmail.com"
                         className="w-full px-4 py-2.5 rounded-xl border border-slate-200 text-xs sm:text-sm focus:outline-hidden focus:ring-2 focus:ring-[#0095da] bg-slate-50 focus:bg-white transition-colors"
                       />
                     </div>

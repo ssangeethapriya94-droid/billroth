@@ -29,6 +29,7 @@ import Careers from './pages/Careers';
 import CathLab from './pages/CathLab';
 import Facilities from './pages/Facilities';
 import FacilityDetail from './pages/FacilityDetail';
+import Academics from './pages/Academics';
 
 // Scroll to top or anchor on route change
 const ScrollToTop = () => {
@@ -99,6 +100,8 @@ const App = () => {
           <Route path="/insurance-tpa" element={<TPAs />} />
 
           <Route path="/health-packages" element={<HealthPackages />} />
+          <Route path="/health-checkup" element={<HealthPackages />} />
+          <Route path="/health-checkups" element={<HealthPackages />} />
           <Route path="/blog" element={<Blog />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/appointment" element={<Appointment />} />
@@ -137,9 +140,12 @@ const App = () => {
           <Route path="/terms" element={<TermsAndConditions />} />
           <Route path="/privacy-policy" element={<TermsAndConditions />} />
           <Route path="/careers" element={<Careers />} />
+          <Route path="/academics" element={<Academics />} />
+          <Route path="/our-academics" element={<Academics />} />
+          <Route path="/masters-in-emergency-medicine" element={<Academics />} />
+          <Route path="/mem" element={<Academics />} />
 
           {/* Additional auxiliary routes */}
-          <Route path="/academics" element={<ComingSoon title="Academics" />} />
           <Route path="/second-opinion" element={<Appointment />} />
           <Route path="/blog/:slug" element={<ComingSoon title="Blog Post" />} />
           <Route path="*" element={<NotFound />} />

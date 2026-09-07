@@ -594,7 +594,7 @@ const InternationalPatients = () => {
                     <input
                       type="email"
                       required
-                      placeholder="e.g. patient@email.com"
+                      placeholder="e.g. ahmed.almansoori@gmail.com"
                       value={formData.email}
                       onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                       className="w-full px-4 py-3 rounded-xl border border-slate-200 text-sm focus:outline-none focus:border-[#0095da] focus:ring-2 focus:ring-[#0095da]/20"

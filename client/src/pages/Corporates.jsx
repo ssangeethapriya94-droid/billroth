@@ -768,7 +768,7 @@ const Corporates = () => {
                     <input
                       type="email"
                       required
-                      placeholder="e.g. hr@company.com"
+                      placeholder="e.g. hr.chennai@tcs.com"
                       value={formData.email}
                       onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                       className="w-full px-4 py-3 rounded-xl border border-slate-200 text-sm focus:outline-none focus:border-[#0095da] focus:ring-2 focus:ring-[#0095da]/20"

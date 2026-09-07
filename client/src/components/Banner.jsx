@@ -5,20 +5,36 @@ import { Calendar, Phone, ArrowRight, Award, Users, HeartPulse, Sparkles } from 
 const Banner = () => {
   return (
     <section
-      className="relative overflow-hidden text-white"
-      style={{
-        background: 'linear-gradient(135deg, #004b77 0%, #0077b6 35%, #0095da 65%, #3cb878 85%, #8cc63f 100%)',
-      }}
+      className="relative overflow-hidden text-white min-h-[580px] flex flex-col justify-between"
     >
-      {/* Background Soft Glows */}
-      <div className="absolute inset-0 pointer-events-none overflow-hidden">
-        <div className="absolute -top-40 -right-40 w-96 h-96 bg-[#8cc63f]/25 rounded-full blur-[100px]" />
-        <div className="absolute -bottom-40 -left-40 w-96 h-96 bg-[#0095da]/30 rounded-full blur-[100px]" />
+      {/* Background Doctor Photo Layer with Seamless Balanced Gradient Overlay */}
+      <div className="absolute inset-0 z-0 overflow-hidden">
+        <img
+          src="/hero-doctors-bg.jpg"
+          alt="Billroth Hospitals Expert Doctors Team"
+          className="w-full h-full object-cover object-center scale-100 filter brightness-[0.88] contrast-[1.05]"
+        />
+        {/* Balanced brand gradient overlay letting doctors show softly */}
         <div
-          className="absolute inset-0 opacity-[0.05]"
+          className="absolute inset-0"
           style={{
-            backgroundImage: 'radial-gradient(circle at 1px 1px, white 1px, transparent 0)',
-            backgroundSize: '28px 28px',
+            background:
+              'linear-gradient(135deg, rgba(0, 40, 70, 0.80) 0%, rgba(0, 85, 135, 0.64) 38%, rgba(0, 130, 195, 0.50) 65%, rgba(35, 145, 95, 0.45) 85%, rgba(125, 185, 50, 0.38) 100%)',
+          }}
+        />
+        {/* Soft directional darkening from left for maximum text legibility */}
+        <div className="absolute inset-0 bg-gradient-to-r from-[#002239]/85 via-[#002840]/55 to-transparent" />
+        
+        {/* Soft atmospheric ambient glow lights */}
+        <div className="absolute -top-32 -right-32 w-96 h-96 bg-[#8cc63f]/25 rounded-full blur-[120px] pointer-events-none" />
+        <div className="absolute -bottom-32 -left-32 w-96 h-96 bg-[#0095da]/30 rounded-full blur-[120px] pointer-events-none" />
+        
+        {/* Subtle grid texture overlay */}
+        <div
+          className="absolute inset-0 opacity-[0.04] pointer-events-none"
+          style={{
+            backgroundImage: 'radial-gradient(circle at 1px 1px, white 1.5px, transparent 0)',
+            backgroundSize: '24px 24px',
           }}
         />
       </div>
@@ -41,18 +57,18 @@ const Banner = () => {
             </div>
 
             {/* Headline */}
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl 2xl:text-7xl font-black tracking-tight text-white leading-[1.12]">
+            <h1 className="text-4xl sm:text-5xl lg:text-6xl 2xl:text-7xl font-black tracking-tight text-white leading-[1.12] drop-shadow-md">
               Your Health,{' '}
-              <span className="text-[#8cc63f] drop-shadow-sm">
+              <span className="text-[#8cc63f] drop-shadow-md">
                 Our Priority
               </span>
-              <span className="block text-2xl sm:text-3xl lg:text-4xl 2xl:text-5xl font-bold text-white/95 mt-2">
+              <span className="block text-2xl sm:text-3xl lg:text-4xl 2xl:text-5xl font-bold text-white mt-2 drop-shadow-md">
                 33+ Years of Compassionate Healing
               </span>
             </h1>
 
             {/* Subtitle */}
-            <p className="text-base sm:text-lg 2xl:text-xl text-white/95 leading-relaxed max-w-2xl 2xl:max-w-3xl font-normal">
+            <p className="text-base sm:text-lg 2xl:text-xl text-white/95 leading-relaxed max-w-2xl 2xl:max-w-3xl font-medium drop-shadow-sm">
               Empowering lives with over 150+ specialist doctors, modular operation theatres, and 24/7 dedicated emergency & trauma care in Chennai.
             </p>
 

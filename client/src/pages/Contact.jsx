@@ -243,7 +243,7 @@ const Contact = () => {
                     name="email"
                     value={form.email}
                     onChange={handleChange}
-                    placeholder="name@example.com"
+                    placeholder="e.g. rajesh.kumar@gmail.com"
                     className="w-full px-4 py-3.5 rounded-xl border-2 border-slate-200 focus:border-[#0095da] outline-none text-sm font-semibold bg-slate-50 focus:bg-white transition-all"
                   />
                 </div>
