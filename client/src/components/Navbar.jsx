@@ -14,11 +14,11 @@ const Navbar = () => {
   const location = useLocation();
   const dropdownRef = useRef(null);
 
-  // Group specialties into the 4 columns from the screenshot
-  const col1 = allSpecialties.filter((d) => d.col === 1);
-  const col2 = allSpecialties.filter((d) => d.col === 2);
-  const col3 = allSpecialties.filter((d) => d.col === 3);
-  const col4 = allSpecialties.filter((d) => d.col === 4);
+  // Perfectly balance specialties across 4 even columns (8, 7, 7, 7)
+  const col1 = allSpecialties.slice(0, 8);
+  const col2 = allSpecialties.slice(8, 15);
+  const col3 = allSpecialties.slice(15, 22);
+  const col4 = allSpecialties.slice(22, 29);
 
   useEffect(() => {
     setMobileOpen(false);
@@ -180,35 +180,69 @@ const Navbar = () => {
                               animate={{ opacity: 1, y: 0, scale: 1 }}
                               exit={{ opacity: 0, y: 6, scale: 0.98 }}
                               transition={{ duration: 0.18 }}
-                              className="absolute top-full -left-64 xl:-left-40 w-[960px] xl:w-[1040px] bg-white rounded-b-2xl shadow-2xl border border-slate-100 p-8 z-50 text-slate-800"
+                              className="absolute top-full -left-52 xl:-left-44 w-[1000px] xl:w-[1120px] bg-white rounded-2xl shadow-[0_25px_60px_-15px_rgba(0,0,0,0.2),0_0_0_1px_rgba(0,0,0,0.06)] border border-slate-100 p-6 xl:p-7 z-50 text-slate-800 backdrop-blur-md overflow-hidden"
                             >
-                              <div className="grid grid-cols-4 gap-x-8 gap-y-1">
+                              {/* Top Signature Gradient Accent Bar */}
+                              <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-[#0077c8] via-[#00a896] to-[#8cc63f]" />
+
+                              {/* Mega Menu Top Header */}
+                              <div className="flex items-center justify-between pb-3.5 mb-3.5 border-b border-slate-100">
+                                <div className="flex items-center gap-2.5">
+                                  <div className="w-8 h-8 rounded-xl bg-sky-50 text-[#0095da] flex items-center justify-center font-bold shadow-xs">
+                                    <Stethoscope size={16} />
+                                  </div>
+                                  <div>
+                                    <h4 className="text-xs font-black uppercase tracking-wider text-slate-800">
+                                      Centres of Clinical Excellence
+                                    </h4>
+                                    <p className="text-[11px] font-medium text-slate-400">
+                                      Super-speciality departments &amp; dedicated surgical institutes
+                                    </p>
+                                  </div>
+                                </div>
+                                <div className="hidden sm:flex items-center gap-2 text-[11px] font-bold text-slate-600 bg-slate-50 px-3.5 py-1.5 rounded-full border border-slate-200/70">
+                                  <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
+                                  <span>24x7 Emergency &amp; Trauma Care</span>
+                                </div>
+                              </div>
+
+                              {/* 4 Balanced Columns */}
+                              <div className="grid grid-cols-4 gap-x-3 xl:gap-x-4">
                                 {[col1, col2, col3, col4].map((colList, colIdx) => (
-                                  <div key={colIdx} className="space-y-3.5">
+                                  <div key={colIdx} className="space-y-1">
                                     {colList.map((dept) => (
                                       <Link
                                         key={dept.id}
                                         to={`/departments/${dept.slug}`}
                                         onClick={() => setActiveDropdown(null)}
-                                        className="group block text-[13px] xl:text-[14px] font-bold uppercase tracking-wide text-slate-600 hover:text-[#0095da] transition-all"
+                                        className="group flex items-center justify-between px-2.5 py-1.5 rounded-lg text-[13px] xl:text-[13.5px] font-medium text-slate-700 hover:text-[#0095da] hover:bg-sky-50/80 transition-all duration-150"
                                       >
-                                        <span className="group-hover:translate-x-1.5 inline-block transition-transform duration-150">
-                                          {dept.name}
-                                        </span>
+                                        <div className="flex items-center gap-2 min-w-0">
+                                          <span className="w-1.5 h-1.5 rounded-full bg-slate-300 group-hover:bg-[#0095da] group-hover:scale-125 transition-all shrink-0" />
+                                          <span className="truncate group-hover:translate-x-0.5 transition-transform duration-150 group-hover:font-semibold">
+                                            {dept.name}
+                                          </span>
+                                        </div>
+                                        <ChevronRight size={13} className="text-[#0095da] opacity-0 -translate-x-1 group-hover:opacity-100 group-hover:translate-x-0 transition-all shrink-0" />
                                       </Link>
                                     ))}
                                   </div>
                                 ))}
                               </div>
 
-                              <div className="mt-6 pt-5 border-t border-slate-100 flex items-center justify-between text-xs font-semibold text-slate-500">
-                                <span>32+ Medical &amp; Surgical Specialities across Shenoy Nagar &amp; RA Puram</span>
+                              {/* Mega Menu Footer Bar */}
+                              <div className="mt-4 pt-3.5 border-t border-slate-100 flex items-center justify-between">
+                                <div className="flex items-center gap-2 text-xs font-semibold text-slate-500">
+                                  <ShieldCheck size={16} className="text-[#10a877]" />
+                                  <span>32+ Medical &amp; Surgical Specialities across Shenoy Nagar &amp; RA Puram</span>
+                                </div>
                                 <Link
                                   to="/departments"
                                   onClick={() => setActiveDropdown(null)}
-                                  className="text-[#0095da] hover:underline font-bold flex items-center gap-1"
+                                  className="group inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-gradient-to-r from-[#0095da] to-[#10a877] text-white text-xs font-bold shadow-xs hover:shadow-md hover:scale-[1.02] active:scale-95 transition-all"
                                 >
-                                  View All Specialities <ChevronRight size={13} />
+                                  <span>View All Specialities</span>
+                                  <ArrowRight size={13} className="group-hover:translate-x-0.5 transition-transform" />
                                 </Link>
                               </div>
                             </motion.div>
@@ -219,8 +253,9 @@ const Navbar = () => {
                               animate={{ opacity: 1, y: 0 }}
                               exit={{ opacity: 0, y: 6 }}
                               transition={{ duration: 0.18 }}
-                              className="absolute top-full left-0 min-w-[260px] bg-white rounded-b-2xl shadow-2xl border border-slate-100 p-2 z-50 text-slate-800"
+                              className="absolute top-full left-0 min-w-[270px] bg-white rounded-2xl shadow-[0_20px_50px_-15px_rgba(0,0,0,0.18)] border border-slate-100 p-2 z-50 text-slate-800 overflow-visible"
                             >
+                              <div className="h-0.5 bg-gradient-to-r from-[#0095da] via-[#10a877] to-[#8cc63f] rounded-full mb-1.5 -mx-1" />
                               {link.dropdown.map((item) => {
                                 const hasSub = Boolean(item.subItems && item.subItems.length > 0);
 
@@ -237,14 +272,16 @@ const Navbar = () => {
                                         setActiveDropdown(null);
                                         setActiveSubDropdown(null);
                                       }}
-                                      className={`flex items-center justify-between px-4 py-2.5 text-[13px] font-bold uppercase tracking-wider rounded-xl transition-all ${
+                                      className={`flex items-center justify-between px-3.5 py-2.5 text-[13px] font-semibold rounded-xl transition-all ${
                                         location.pathname === item.path
-                                          ? 'bg-sky-50 text-[#0095da]'
-                                          : 'text-slate-700 hover:text-white hover:bg-gradient-to-r hover:from-[#0095da] hover:to-[#8cc63f]'
+                                          ? 'bg-sky-50 text-[#0095da] font-bold'
+                                          : 'text-slate-700 hover:text-[#0095da] hover:bg-sky-50/80'
                                       }`}
                                     >
                                       <span>{item.label}</span>
-                                      {hasSub && <ChevronRight size={13} className="shrink-0" />}
+                                      {hasSub ? (
+                                        <ChevronRight size={14} className="shrink-0 text-slate-400 group-hover:text-[#0095da]" />
+                                      ) : null}
                                     </Link>
 
                                     {/* Flyout Submenu for Facilities */}
@@ -256,8 +293,9 @@ const Navbar = () => {
                                             animate={{ opacity: 1, x: 0 }}
                                             exit={{ opacity: 0, x: -6 }}
                                             transition={{ duration: 0.15 }}
-                                            className="absolute top-0 left-full ml-1 w-56 bg-white rounded-xl shadow-2xl border border-slate-100 p-2 z-50 text-slate-800"
+                                            className="absolute top-0 left-full ml-1.5 w-64 bg-white rounded-2xl shadow-2xl border border-slate-100 p-2 z-50 text-slate-800"
                                           >
+                                            <div className="h-0.5 bg-gradient-to-r from-[#0095da] to-[#8cc63f] rounded-full mb-1.5 -mx-1" />
                                             {item.subItems.map((sub) => (
                                               <Link
                                                 key={sub.label}
@@ -266,10 +304,10 @@ const Navbar = () => {
                                                   setActiveDropdown(null);
                                                   setActiveSubDropdown(null);
                                                 }}
-                                                className="flex items-center justify-between px-3 py-1.5 text-xs font-bold text-slate-700 hover:text-white hover:bg-gradient-to-r hover:from-[#0095da] hover:to-[#8cc63f] rounded-lg transition-all group"
+                                                className="group flex items-center justify-between px-3 py-2 text-xs font-semibold text-slate-700 hover:text-[#0095da] hover:bg-sky-50/80 rounded-xl transition-all"
                                               >
                                                 <span>{sub.label}</span>
-                                                <ArrowRight size={11} className="opacity-0 group-hover:opacity-100 transition-opacity" />
+                                                <ArrowRight size={11} className="opacity-0 -translate-x-1 group-hover:opacity-100 group-hover:translate-x-0 transition-all text-[#0095da]" />
                                               </Link>
                                             ))}
                                           </motion.div>
