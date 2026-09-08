@@ -19,19 +19,46 @@ const Events = () => {
   const [searchQuery, setSearchQuery] = useState('');
   const [activeModalEvent, setActiveModalEvent] = useState(null);
 
+  // Helper to normalize text for flexible search and comparison
+  const normalize = (str) => {
+    return (str || '')
+      .toLowerCase()
+      .replace(/[\u2018\u2019]/g, "'")
+      .replace(/[\u201C\u201D]/g, '"')
+      .replace(/['"’“”]/g, '')
+      .trim();
+  };
+
   // Filter events
   const filteredEvents = useMemo(() => {
+    const cleanQuery = normalize(searchQuery);
+    const searchTerms = cleanQuery.split(/\s+/).filter(Boolean);
+
     return events.filter((ev) => {
-      const matchesCategory = 
-        selectedCategory === 'All' || ev.category === selectedCategory;
+      // 1. Category Matching
+      const matchesCategory =
+        selectedCategory === 'All' ||
+        normalize(ev.category) === normalize(selectedCategory);
 
-      const matchesSearch = 
-        ev.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
-        ev.description.toLowerCase().includes(searchQuery.toLowerCase()) ||
-        ev.location.toLowerCase().includes(searchQuery.toLowerCase()) ||
-        ev.highlights.some(h => h.toLowerCase().includes(searchQuery.toLowerCase()));
+      if (!matchesCategory) return false;
 
-      return matchesCategory && matchesSearch;
+      // 2. Search Query Matching across all relevant event fields
+      if (searchTerms.length === 0) return true;
+
+      const searchableCorpus = [
+        ev.title,
+        ev.category,
+        ev.description,
+        ev.location,
+        ev.date,
+        ev.dateBadge,
+        ev.year,
+        ...(ev.highlights || [])
+      ]
+        .map(normalize)
+        .join(' ');
+
+      return searchTerms.every((term) => searchableCorpus.includes(term));
     });
   }, [selectedCategory, searchQuery]);
 
